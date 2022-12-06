@@ -6,16 +6,15 @@
     Helvetica, Arial, sans-serif;
 }
 
+/* NavBar */
 .nav {
   min-height: 4rem;
   border-bottom: 1px solid rgb(214, 209, 209);
 }
 .nav {
   display: grid;
-  grid-template-columns: 1fr 1fr 0px;
-  justify-content: space-between;
-  align-content: center;
 }
+
 .toggle {
   display: none;
 }
@@ -25,8 +24,11 @@
 }
 .logo {
   display: flex;
-  flex-direction: row;
+  width: 50%;
   align-items: center;
+}
+.nav-links{
+  width: 50%;
 }
 .logo img {
   height: 3.5rem;
@@ -43,25 +45,22 @@
   .toggle i {
     display: block;
     width: 100%;
-    height: 2.3rem;
-    font-size: 2rem;
+    height: 2rem;
+    font-size: 1.5rem;
     margin-left: 1rem;
-  }
-  .nav {
-    grid-template-columns: 1fr;
   }
   .logo {
     width: 100%;
   }
   .logo img {
-    margin-left: 22%;
+    margin-left: 20%;
   }
   .nav-links {
     background-color: grey;
   }
   .nav-links {
     height: calc(100vh - 4rem);
-    width: 100vw;
+    width: 100%;
     transition: all 0.3s ease-in;
     top: 4rem;
     z-index: 500;
@@ -69,22 +68,18 @@
   .hide-links {
     width: 0;
     height: 0;
-    overflow: hidden;
     transition: all 0.3 ease-out;
   }
 }
+/* Event Title Page */
 
 .event-title {
-  height: 155px;
+  height: auto;
   border-bottom: 1px solid rgb(214, 209, 209, 0.5);
   padding: 1.5rem 1.25rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
+
 .hoster {
-  display: flex;
-  flex-direction: row;
   display: flex;
   align-items: center;
   margin-top: 15px;
@@ -95,16 +90,13 @@
   border-radius: 50%;
   height: 3rem;
 }
+
 #hoster-name {
+  display: block;
   font-weight: 600;
   margin-top: 5px;
 }
-.hosted-by {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  font-size: 1rem;
-}
+
 .event-title h2 {
   font-weight: 700;
   font-size: 1.875rem;
@@ -113,18 +105,17 @@
 }
 
 @media screen and (max-width: 1050px) {
-  .hoster {
-    margin-left: 0;
-  }
+  .hoster,
   .event-title h2 {
     margin-left: 0;
   }
 }
 
+/* Event Detail Page */
+
 .event-detail {
   display: grid;
   grid-template-columns: 67% 33%;
-  position: relative;
   background-color: rgb(225, 225, 225, 0.2);
 }
 
@@ -132,9 +123,9 @@
   position: sticky;
   top: 100px;
   height: 30vh;
-  margin-top: 100px;
-  width: 80%;
+  margin-top: 50px;
   margin-bottom: 250px;
+  width: 80%;
   margin-left: 20px;
   display: flex;
   flex-direction: column;
@@ -150,14 +141,11 @@
   padding: 1.5rem 1.25rem;
 }
 .info div {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 10px;
   margin-left: 20px;
 }
 .info div h2 {
   font-size: 1rem;
+  margin-bottom: 10px;
 }
 .info div p {
   font-size: 0.825rem;
@@ -180,7 +168,6 @@
 }
 
 .time-info i {
-  display: inline-block;
   font-size: 1.2rem;
   color: #a2a2a2;
   margin: 0 5px;
@@ -193,29 +180,19 @@
   letter-spacing: 1px;
 }
 
-.address {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  letter-spacing: 1px;
-}
-
 .detail {
   width: 80%;
   margin: auto;
   margin-top: 70px;
 }
 .discription img {
-  
   object-fit: cover;
-   min-width: 100%;
-    max-width: 100%;
-    min-height: 100%;
-    max-height: 100%;
+  min-width: 100%;
+  max-width: 100%;
+  height: auto;
 }
 
 .event-info p {
-  font-size: 1.1rem;
   line-height: 1.5;
   color: #212121;
 }
@@ -225,18 +202,22 @@
 }
 
 .attendese-box {
-  margin-top: 40px;
+  margin-top: 80px;
 }
 
 .attendese {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  display: flex;
   row-gap: 1.5rem;
   justify-content: space-between;
   margin-top: 40px;
+  flex-wrap: wrap;
+  flex-basis: 25%;
+}
+.attendee-box{
+  min-width: 24%;
 }
 .attendee {
-  width: 150px;
+  min-width: 150px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -247,6 +228,7 @@
   height: 200px;
   text-align: center;
   width: 150px;
+  margin: auto;
 }
 .attendee img {
   height: 72px;
@@ -279,16 +261,11 @@
   }
   #time {
     position: relative;
-    margin-bottom: 0;
-    margin-left: 0;
+    margin: 1rem 0 0 0;
     order: -1;
     height: auto;
-    margin-top: 1rem;
     top: 0;
-    padding-left: 1.25rem;
-    padding-bottom: 1.25rem;
-    padding-top: 0.75rem;
-    padding-right: 1.25rem;
+    padding: 0.75rem 1.25rem 1.25rem 1.25rem;
     width: 100%;
     background-color: white;
   }
@@ -300,10 +277,7 @@
     margin-left: 1.25rem;
     gap: 10px;
   }
-  .info div p {
-    font-size: 0.9rem;
-    line-height: 1.25;
-  }
+  .info div p,
   .info div h2 {
     font-size: 0.9rem;
     line-height: 1.25;
@@ -320,15 +294,13 @@
     gap: 20px;
     letter-spacing: normal;
   }
-  .address {
-    gap: 20px;
-    letter-spacing: normal;
-  }
+
   .time-info i {
     font-size: 1.5rem;
     width: 1.5rem;
     margin: 0;
   }
+
   .detail {
     width: 100%;
     margin: auto;
@@ -348,25 +320,28 @@
 
 @media screen and (max-width: 600px) {
   .attendese {
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    /* grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; */
     overflow-x: auto;
     column-gap: 1.3rem;
+    flex-wrap: nowrap;
+  }
+  .attendee-box{
+    min-width: auto;
   }
 }
 
-
-
+/* Stick-Bar */
 .stick-bar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  grid-column-start: 1;
-  grid-column-end: 3;
+  grid-column: 1 / span 3;
   height: 6rem;
   background-color: white;
   margin-top: 30px;
   position: sticky;
   bottom: 0;
+  padding: 0 3% 0 6%;
 }
 
 .stick-time {
@@ -374,16 +349,17 @@
   flex-direction: column;
   justify-content: center;
   gap: 5px;
-  margin-left: 6%;
 }
+
 .stick-info {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 20px;
   color: #212121;
-  margin-right: 3%;
+  justify-content: space-between;
 }
+
 .stick-info .price {
   display: flex;
   flex-direction: column;
@@ -397,7 +373,7 @@
   font-size: 1.5rem;
 }
 .stick-info div i:hover {
-  color: black;
+  color: rgb(34, 34, 34);
 }
 .stick-info button {
   height: 3.5rem;
@@ -425,20 +401,12 @@
 }
 @media screen and (max-width: 1050px) {
   .stick-bar {
-    grid-column-start: 1;
-    grid-column-end: 1;
+    grid-column: auto;
     padding: 0px 1.25rem;
   }
-  .stick-time {
-    margin-left: 0;
-  }
-  .stick-info {
-    margin-right: 0;
-  }
-  #share {
-    text-align: center;
-  }
-  #share i {
+
+  #share i,
+  #share span {
     margin-left: 0;
   }
   .stick-info button {
@@ -446,7 +414,6 @@
   }
   #share span {
     display: none;
-    margin-left: 0;
   }
 }
 @media screen and (max-width: 600px) {
@@ -462,22 +429,18 @@
     font-size: 1.2rem;
   }
   .stick-info {
-    justify-content: space-around;
     width: 100%;
   }
 }
-@media screen and (max-width:380px) {
-  .stick-bar .price p{
-   font-size: 0.8rem;
+@media screen and (max-width: 380px) {
+  .stick-bar .price p {
+    font-size: 0.8rem;
   }
-  .stick-info{
-    justify-content: flex-start;
+  .star-icon button {
+    padding: 1rem 1rem;
   }
- .star-icon button{
-  padding: 1rem 1rem;
- }
 }
-
+/* Footer */
 footer {
   background-color: rgb(39, 37, 37);
   min-height: 50vh;

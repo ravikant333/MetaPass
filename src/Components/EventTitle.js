@@ -9,7 +9,7 @@ const EventTitle = () => {
         <img src='https://secure-content.meetupstatic.com/images/classic-member/310880278/45x45.jpg'></img>
      </span>
       <div className='hosted-by'>
-        <span>Hosted By</span>
+        <p>Hosted By</p>
         <span id='hoster-name'>SolidJS C.</span>
       </div>
     </div>

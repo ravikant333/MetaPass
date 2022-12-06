@@ -40,7 +40,7 @@ const EventDetail = () => {
           <i class="fa-regular fa-clock"></i>Tuesday, December 13, 2022 at 6:30 PM to Tuesday, December 13, 2022
             at 9:30 PM EST
           </time>
-          <div className="address">
+          <div className="address date">
           <i class="fa fa-location-dot"></i>285 Madisone Ave ,NewYork ,NYC</div>
         </div>
       </div>
